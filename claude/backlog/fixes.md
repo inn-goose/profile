@@ -7,10 +7,10 @@ file under `shell/` where the change lives now (after the modular split).
 
 ## Real bugs (will misbehave)
 
-### TERM forced to `rxvt`
-- **Where**: `shell/20-vars.sh` — `export TERM=rxvt`
-- **Problem**: overrides whatever the actual terminal advertised (`xterm-256color` on macOS Terminal/iTerm). Loses 256-color support; coarsens vim/less/htop colors; can break truecolor.
-- **Fix**: delete the line. Don't force `TERM` — let the terminal emulator set it.
+### ~~TERM forced to `rxvt`~~ — DONE 2026-04-29
+- **Where**: was `shell/20-vars.sh` — `export TERM=rxvt`
+- **Problem**: overrode the terminal's advertised `xterm-256color`. Lost 256-color support, and on bash 3.2 (Apple default) caused bracketed-paste markers (`\e[200~`/`\e[201~`) to leak through every paste because rxvt's terminfo doesn't declare the capability.
+- **Fix applied**: deleted the line from `shell/20-vars.sh` and from `~/.local/.profile/.bash_profile`. Added `shell/45-readline.sh` that runs `printf '\e[?2004l'` to defensively disable bracketed paste at shell init (bash 3.2 still can't strip the markers; quickest reliable fix is to tell the terminal not to send them).
 
 ### PATH wrong on Apple Silicon
 - **Where**: `shell/20-vars.sh` — `export PATH="/usr/local/bin:${PATH}"`
