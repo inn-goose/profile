@@ -21,5 +21,6 @@ ln -sf ~/.local/.profile/home/.screenrc ~/.screenrc
 ln -sf ~/.local/.profile/home/.vim/ ~/.vim
 ln -sf ~/.local/.profile/home/.vimrc ~/.vimrc
 
+ln -sf ~/.local/.profile/bin/sys_info ~/.local/bin/sys_info
 #ln -sf ~/.local/.profile/bin/add_rsa_keys ~/.local/bin/add_rsa_keys
 #ln -sf ~/.local/.profile/bin/grab_ssh_agent ~/.local/bin/grab_ssh_agent

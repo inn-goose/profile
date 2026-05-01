@@ -34,7 +34,8 @@ profile/
 │   ├── darwin.sh        ← per-OS: ls -G + LSCOLORS
 │   └── linux.sh         ← per-OS: ls --color=auto + LS_COLORS
 ├── bin/
-│   └── prepare.sh       ← installer (clones repo, creates symlinks)
+│   ├── prepare.sh       ← installer (clones repo, creates symlinks)
+│   └── sys_info         ← cpu% / pmem% printer for the .screenrc caption
 ├── claude/
 │   └── backlog/
 │       └── fixes.md     ← known issues + planned cleanups
