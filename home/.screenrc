@@ -10,9 +10,8 @@ defmonitor on
 
 backtick 13 4 4 ${HOME}/.local/bin/sys_info cpu
 backtick 14 4 4 ${HOME}/.local/bin/sys_info pmem
-backtick 15 0 0 echo $__SCREEN_NAME
 
-caption always "%{= gk}%-Lw%{= kg}  %n%f %t  %{-}%+Lw %= %{= gk} %H (%15`) %{-}%{= ck} %13` %{-}%{= yk} %14` %{-}"
+caption always "%{= gk}%-Lw%{= kg}  %n%f %t  %{-}%+Lw %= %{= gk} %H (%S) %{-}%{= ck} %13` %{-}%{= yk} %14` %{-}"
 
 shelltitle "$ |tab"
 
